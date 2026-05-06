@@ -1,0 +1,7 @@
+.venv/
+.deps/
+.tmp-pip/
+__pycache__/
+*.pyc
+scan_results.sqlite3
+*.log
