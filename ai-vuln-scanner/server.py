@@ -8,7 +8,7 @@ from urllib.parse import parse_qs
 from scanner import analyze_code, init_db, load_recent_scans, load_stats, save_scan
 
 
-HOST = "127.0.0.1"
+HOST = os.environ.get("HOST", "0.0.0.0")
 PORT = int(os.environ.get("PORT", "8501"))
 
 DEFAULT_CODE = """import os
@@ -255,7 +255,11 @@ def render_stats() -> str:
 def main() -> None:
     init_db()
     server = ThreadingHTTPServer((HOST, PORT), AppHandler)
-    print(f"Open http://{HOST}:{PORT}")
+    if HOST == "0.0.0.0":
+        print(f"Open on this computer: http://127.0.0.1:{PORT}")
+        print(f"Open from another device: http://<this-computer-ip>:{PORT}")
+    else:
+        print(f"Open http://{HOST}:{PORT}")
     server.serve_forever()
 
 

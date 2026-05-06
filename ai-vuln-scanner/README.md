@@ -16,12 +16,25 @@ cd grape7_pj/ai-vuln-scanner
 
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
 python server.py
 ```
 
-브라우저에서 `http://127.0.0.1:8501`로 접속하면 됩니다.
+실행한 컴퓨터에서는 브라우저에서 `http://127.0.0.1:8501`로 접속하면 됩니다.
+
+같은 와이파이에 연결된 다른 기기에서 접속하려면 서버를 실행한 컴퓨터의 IP 주소를 확인한 뒤 접속합니다.
+
+```powershell
+ipconfig
+```
+
+예를 들어 IPv4 주소가 `192.168.0.10`이면 다른 기기 브라우저에서 아래 주소로 접속합니다.
+
+```text
+http://192.168.0.10:8501
+```
 
 ## macOS 또는 Linux에서 실행하기
 
@@ -31,10 +44,19 @@ cd grape7_pj/ai-vuln-scanner
 
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
 python server.py
 ```
+
+## 접속이 안 될 때 확인할 것
+
+1. 서버 실행 창에 `Open on this computer: http://127.0.0.1:8501`가 출력되는지 확인합니다.
+2. 서버를 실행한 컴퓨터에서 `http://127.0.0.1:8501` 접속이 되는지 먼저 확인합니다.
+3. 다른 기기에서 접속할 때는 `127.0.0.1`이 아니라 서버 컴퓨터의 IPv4 주소를 사용합니다.
+4. Windows 보안 경고가 뜨면 Python의 개인 네트워크 접근을 허용합니다.
+5. 그래도 안 되면 Windows 방화벽에서 TCP 포트 `8501` 인바운드 허용 규칙을 추가합니다.
 
 ## 프로젝트 구조
 
