@@ -1,0 +1,7 @@
+gradio==4.44.1
+huggingface_hub<1.0
+fastapi<0.135
+starlette<1.0
+torch>=2.2
+transformers>=4.40,<5
+safetensors>=0.4

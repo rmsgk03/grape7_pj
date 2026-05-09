@@ -1,0 +1,18 @@
+{
+    "label2id": {
+        "BUFFER_OVERFLOW": 0,
+        "COMMAND_INJECTION": 1,
+        "PATH_TRAVERSAL": 2,
+        "SAFE": 3,
+        "SQL_INJECTION": 4,
+        "XSS": 5
+    },
+    "id2label": {
+        "0": "BUFFER_OVERFLOW",
+        "1": "COMMAND_INJECTION",
+        "2": "PATH_TRAVERSAL",
+        "3": "SAFE",
+        "4": "SQL_INJECTION",
+        "5": "XSS"
+    }
+}
